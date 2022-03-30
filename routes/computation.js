@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-var x;
+/* GET computation page. */
+router.get('/', function (req, res, next) {
+  var x;
   var random = Math.random().toFixed(2);
   console.log(req.query.x);
   x = req.query.x;
@@ -17,6 +19,6 @@ var x;
     value2: `Math.ceil() applied to ` + x + ` is ${Math.ceil(x)}`,
     value3: `Math.clz32() applied to ` + x + ` is ${Math.clz32(x).toFixed(2)}`,
   });
-
+});
 
 module.exports = router;
